@@ -10,6 +10,27 @@ const listUsersResponse = await notion.users.list({});
 //   console.log(listUsersResponse);
 
 const myPage = await notion.databases.query({
-  database_id: 'ccdcdced5f774baaac57f2bfdffa296e',
+  database_id: process.env.DATABASE_ID,
 });
-console.log(myPage.results[0].properties.Name.title);
+// console.log(myPage.results[0].properties.Name.title);
+
+try {
+  const response = await notion.pages.create({
+    parent: { database_id: process.env.DATABASE_ID },
+    properties: {
+      title: {
+        title: [
+          {
+            text: {
+              content: 'Hello World',
+            },
+          },
+        ],
+      },
+    },
+  });
+  console.log(response.properties.Name.title);
+  console.log('Entry Added');
+} catch (error) {
+  console.log(error.body);
+}
