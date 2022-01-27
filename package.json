@@ -1,0 +1,24 @@
+{
+  "name": "notion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjshuff23/notion-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mjshuff23/notion-api/issues"
+  },
+  "homepage": "https://github.com/mjshuff23/notion-api#readme",
+  "dependencies": {
+    "@notionhq/client": "^0.4.13",
+    "dotenv": "^14.3.2"
+  }
+}
